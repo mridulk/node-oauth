@@ -16,8 +16,8 @@ app.use(cookieparser())
 
 // Route handlers
 
-app.use('/',require('./route/user'))
-app.use('/auth',require('./route/auth'))
+app.use('/',require('./controllers/auth/user.controller'))
+app.use('/auth',require('./controllers/auth/auth.controller'))
 
 const PORT=3000||process.env.PORT;
 
