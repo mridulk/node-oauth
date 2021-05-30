@@ -4,13 +4,15 @@ const cors=require('cors')
 const cookieparser=require('cookie-parser')
 
 // Load config (enter secret keys , hide from public domain)
+
 dotenv.config({path:'./config/config.env'})
 
 
-// initializeing app
+// initializing app
 const app=express();
 
-// enabling cors
+//  cors middleware
+
 app.use(cors({ origin: true, credentials: true }))
 app.use(cookieparser())
 
@@ -18,6 +20,8 @@ app.use(cookieparser())
 
 app.use('/',require('./controllers/auth/user.controller'))
 app.use('/auth',require('./controllers/auth/auth.controller'))
+
+//PORT NUMBER
 
 const PORT=3000||process.env.PORT;
 
